@@ -1,0 +1,27 @@
+body{
+	background-color: #BEBEBE;
+}
+#body{
+	margin-left: 20%;
+	width: 600px;
+	height: auto;
+	background-color: #97CBFF;
+}
+table{
+	width: 600px;
+}
+.focus{
+	color: #FF5151;
+}
+#p1{
+	text-align: center;
+}
+textarea{
+	width: 585px;
+	height: 150px;
+}
+#btn1{
+	margin-left: 45%;
+	width: 60px;
+
+}

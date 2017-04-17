@@ -1,0 +1,118 @@
+#logo{
+	background-color: #272727;
+	width: auto;
+	height: 80px;
+	padding-top: 20px;
+}
+#logo a img{
+	width: 70px;
+	height: 50px;
+	margin-left: 70px;
+}
+#logo a{
+	float: left;
+}
+#logo_p1{
+	color:#97CBFF;
+	margin-top: -4px;
+}
+#logo_p2{
+	color:#97CBFF;
+	font-size: 10px;
+}
+#lon{
+	margin-left: 90%;
+	margin-top: -50px;
+	color:#97CBFF;
+}
+#top{
+	background-color:#EA0000; 
+	width: auto;
+	height: 50px;
+	margin-top: -20px;
+	padding-top: 2px;
+}
+#top ul li{
+	list-style: none;
+	float: left;
+	margin-left: 60px;
+}
+#top ul li a{
+	text-decoration: none;
+	color: #272727;
+}
+#top ul li a:hover{
+	color: #97CBFF;
+}
+#body{
+	width: 100px;
+	height: auto;
+}
+#body_left{
+	background-color: #272727;
+	width: 240px;
+	height: 25px;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-left: 70px;
+}
+#body div p{
+	color: #97CBFF;
+	text-align: center;
+}
+#body ul li{
+	list-style: none;
+	width: 240px;
+	margin-left: -25px;
+	margin-top: 5px;
+}
+#body ul li a{
+	text-decoration: none;
+}
+#body_right{
+	width: 600px;
+	height: 100px; 
+	margin-left: 340px;
+}
+#body_right_div{
+	float: right;
+	margin-top: -20px;
+}
+.list{
+	width: 120px;
+	height: 200px;
+	float: left;
+	margin-left: 30px;
+}
+.list img{
+	width: 120px;
+	height: 140px;
+	margin-top: 30px;
+}
+.list a{
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+#foot{
+	background-color: #272727;
+	width: 1000px;
+	height: 100px;
+	margin-top: 40%;
+	padding-top: 10px;
+}
+#foot a{
+	color: #97CBFF;
+	text-decoration: none;
+	margin-left: 100px;
+}
+#foot p{
+	color: #FFECEC;
+	margin-left: 30%;
+}
+#time{
+	display: block;
+	position: absolute;
+	margin-top: -20px;
+	margin-left: 40px;
+}
