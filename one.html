@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>链表</title>
+</head>
+<style>
+	*{margin: 0px;padding: 0px;}
+	#input{
+		width:  335px;
+		margin-top: 50px;
+		margin-left: 20px;
+	}
+	div{
+		background-color: #46A3FF;
+		height: 500px;
+		width: 500px;
+		margin-left: 30%;
+		margin-top: 5%;
+	}
+	.select{
+		height: 30px;
+		width: 70px;
+		background-color: #8080C0;
+		margin-left: 20px;
+		border-radius: 10px;
+	}
+	input{
+		height: 30px;
+		width: 100px;
+		border-radius: 10px;
+		padding-left: 10px;
+		margin-top: 20px;
+	}
+	#inputE{
+		margin-left: 20px;
+	}
+	#txt{
+		width: 425px;
+		height: 280px;
+		margin-left: 20px;
+		margin-top: 50px;
+		padding: 10px;
+		font-size: 18px;
+		font-family: "微软雅黑";
+	}
+</style>
+<body>
+	<div>
+	<input type="text" id="input" placeholder="请输入城市名称：">
+	<button id="select" class="select">查询</button>
+
+	<input type="text" id="inputE" placeholder="请输入东经度数：">
+	<input type="text" id="inputN" placeholder="请输入北纬度数：">
+	<input type="text" id="inputL" placeholder="请输入距离：">
+	<button id="select1" class="select">查询</button>
+
+	<textarea id="txt"></textarea>
+	</div>
+</body>
+<script>
+	var arr = [{city: "安徽",north: 30,east: 117},
+			   {city: "北京",north: 39,east: 116},
+			   {city: "福建",north: 26,east: 119},
+			   {city: "甘肃",north: 40,east: 110},
+			   {city: "广东",north: 22,east: 112},
+			   {city: "广西",north: 23,east: 108},
+			   {city: "贵州",north: 27,east: 104},
+			   {city: "海南",north: 19,east: 109},
+			   {city: "河北",north: 38,east: 115},
+			   {city: "河南",north: 34,east: 113},
+			   {city: "黑龙江",north: 47,east: 122},
+			   {city: "湖北",north: 31,east: 114},
+			   {city: "湖南",north: 25,east: 118},
+			   {city: "吉林",north: 40,east: 126},
+			   {city: "江苏",north: 35,east: 120},
+			   {city: "江西",north: 21,east: 111},
+			   {city: "辽宁",north: 40,east: 123},
+			   {city: "山东",north: 32,east: 124},
+			   {city: "山西",north: 36,east: 125}
+	];
+	var select = document.getElementById('select');
+	var select1 = document.getElementById('select1');
+	var txt = document.getElementById('txt');
+	select.onclick = function(){
+		var input = document.getElementById('input').value;
+		if(do_data(input) == undefined){
+			txt.value = "没有找到输入的城市信息";
+		}else{
+			txt.value = do_data(input);
+		}
+	}
+	select1.onclick = function(){
+		txt.value = "";
+		var inputE = document.getElementById('inputE').value;
+		var inputN = document.getElementById('inputN').value;
+		var inputL = document.getElementById('inputL').value;
+		//console.log(compute(inputE,inputN,inputL));
+		for(var k in compute(inputE,inputN,inputL)){
+			txt.value += compute(inputE,inputN,inputL)[k] + ' \n';
+		}
+	}
+
+
+	function do_data(data){    //查询城市信息函数
+		for(var i=0; i<arr.length; i++){
+			if(data == arr[i].city){
+				var ru = "您找的城市是："+arr[i].city+" \n"+"地处于北纬"+arr[i].north+"度"+"东经"+arr[i].east+"度"+" \n";
+				return ru;
+			}
+		}
+	}
+	function compute(e,n,l){    //计算相应距离的函数
+		var larr =[];
+		for(var i=0; i<arr.length; i++){
+			var distance = Math.sqrt((arr[i].north-e)*(arr[i].north-e)+(arr[i].east-n)*(arr[i].east-n));
+			if(l >= distance){
+				larr.push(arr[i].city);
+			}
+		}
+		return larr;
+	}
+</script>
+</html>
