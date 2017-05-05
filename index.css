@@ -1,0 +1,46 @@
+#head{
+	height: 5%;
+	width: auto;
+}
+#logo{
+	height: 10%;
+	width: 10%;
+	margin-left:17%;
+}
+#it{
+	position: relative;
+	color: #0A498E;
+	font-size: 50px;
+	margin-left: 2%;
+	top:-10px;
+}
+#head a{
+	position: relative;
+	margin-left: 5%;
+	text-decoration: none;
+	top:-20px;
+	color: #191D25;
+}
+#hr1{
+	position: relative;
+}
+input{
+	margin-left: 2%;
+	margin-top: 20px;
+}
+table{
+	margin-left: 15%;
+	margin-top: 30px;
+	border-color: #3464C3;
+	width: 70%;
+	height: auto;
+}
+button{
+	margin-left: 10%;
+}
+textarea{
+	width: 200px;
+	height: 50px;
+	margin-left: 4%;
+	font-size: 17px;
+}
