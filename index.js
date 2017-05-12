@@ -1,4 +1,4 @@
-var arr = [{"num":11,"name":"GitHub","team":"Logical Awesome","inter":"GitHub是一个通过Git进行版本控制的软件源代码托管服务","tear":"www.gihub.com"},
+var arr = [{"num":1,"name":"GitHub","team":"Logical Awesome","inter":"GitHub是一个通过Git进行版本控制的软件源代码托管服务","tear":"www.gihub.com"},
 			{"num":2,"name":"Javascript","team":"ECMAScript","inter":"JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言","tear":"www.javascript.com"},
 			{"num":3,"name":"Java","team":"ECMAScript","inter":"JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言","tear":"www.javascript.com"},
 			{"num":4,"name":"Node.js","team":"Ryan Dahl","inter":"Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境","tear":"www.ndojs.cn"},
