@@ -9,20 +9,29 @@ var arr = [{"num":1,"name":"GitHub","team":"Logical Awesome","inter":"GitHub是�
 			{"num":9,"name":"ECMAScript 6","team":"Ecma","inter":"这种语言在万维网上应用广泛，它往往被称为JavaScript或JScript，但实际上后两者是ECMA-262标准的实现和扩展","tear":"cn.vuejs.org"},
 			{"num":10,"name":"jQuery","team":"John Resig","inter":"简化HTML与JavaScript之间的操作","tear":"cn.vuejs.org"}
 ];
+window.onload = function(){
+	todo();
+}
 
-var table=document.getElementById('table');
-for(let i=0; i<10; i++){
-	var tr = table.insertRow(table.rows.length);
-	var td0=tr.insertCell(0);
-	var td1=tr.insertCell(1);
-	var td2=tr.insertCell(2);
-	var td3=tr.insertCell(3);
-	var td4=tr.insertCell(4);
-	td0.innerHTML=arr[i].num;
-	td1.innerHTML=arr[i].name;
-	td2.innerHTML=arr[i].team;
-	td3.innerHTML=arr[i].inter;
-	td4.innerHTML=arr[i].tear;
+
+function todo(){
+	var table=document.getElementById('table');
+	for(let i=0; i<10; i++){
+		if(arr[i] != undefined){
+			var tr = table.insertRow(table.rows.length);
+			var td0=tr.insertCell(0);
+			var td1=tr.insertCell(1);
+			var td2=tr.insertCell(2);
+			var td3=tr.insertCell(3);
+			var td4=tr.insertCell(4);
+			td0.innerHTML=arr[i].num;
+			td1.innerHTML=arr[i].name;
+			td2.innerHTML=arr[i].team;
+			td3.innerHTML=arr[i].inter;
+			td4.innerHTML=arr[i].tear;
+		}
+		
+	}
 }
 
 
@@ -33,24 +42,60 @@ let demand = document.getElementById('demand');
 
 
 
-add.onclick = function(){
-	let num = document.getElementById('num').innerHTML;
-	let name = document.getElementById('name').innerHTML;
-	let team = document.getElementById('team').innerHTML;
-	let inter = document.getElementById('inter').innerHTML;
-	let tear = document.getElementById('tear').innerHTML;
-	console.log(num);
-	/*let new_tr = table.insertRow(table.rows.length);
+add.onclick = function(){//进行添加操作
+	let num = document.getElementById('num').value;
+	let name = document.getElementById('name').value;
+	let team = document.getElementById('team').value;
+	let inter = document.getElementById('inter').value;
+	let tear = document.getElementById('tear').value;
+	let new_tr = table.insertRow(table.rows.length);
 	let new_td0=new_tr.insertCell(0);
 	let new_td1=new_tr.insertCell(1);
 	let new_td2=new_tr.insertCell(2);
 	let new_td3=new_tr.insertCell(3);
 	let new_td4=new_tr.insertCell(4);
-	new_td0.innerHTML=arr[i].num;
-	new_td1.innerHTML=arr[i].name;
-	new_td2.innerHTML=arr[i].team;
-	new_td3.innerHTML=arr[i].inter;
-	new_td4.innerHTML=arr[i].tear;*/
+	new_td0.innerHTML=num;
+	new_td1.innerHTML=name;
+	new_td2.innerHTML=team;
+	new_td3.innerHTML=inter;
+	new_td4.innerHTML=tear;
+	arr[arr.length] = {num:num,name:name,team:team,inter:inter,tear:tear}
+	console.log(arr);
+}
+
+
+remove.onclick = function(){
+	let num = document.getElementById('num').value;
+	let table=document.getElementById('table');
+	delete arr[num-1];
+	 table.innerHTML = "<tr><td width='8%'>序号</td><td width='20%'>名称</td><td width='30%'>开发团队</td><td width='25%'>技术概要</td><td width='20%'>技术文章</td></tr>";
+	 todo();
+}
+
+modification.onclick = function(){
+	let table=document.getElementById('table');
+	let num = document.getElementById('num').value;
+	let name = document.getElementById('name').value;
+	let team = document.getElementById('team').value;
+	let inter = document.getElementById('inter').value;
+	let tear = document.getElementById('tear').value;
+	arr[num-1].num = num;
+	arr[num-1].name = name;
+	arr[num-1].team = team;
+	arr[num-1].inter = inter;
+	arr[num-1].tear = tear;
+	table.innerHTML = "<tr><td width='8%'>序号</td><td width='20%'>名称</td><td width='30%'>开发团队</td><td width='25%'>技术概要</td><td width='20%'>技术文章</td></tr>";
+	todo();
+}
+
+demand.onclick = function(){
+	let text = document.getElementById("text");
+	let num = document.getElementById('num').value;
+	for(let i=0; i<arr.length; i++){
+		if(arr[i].num == num){
+			text.value = "名称："+arr[i].name;
+		}
+	}
 }
 
 
