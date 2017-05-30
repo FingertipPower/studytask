@@ -10,7 +10,7 @@ var arr = [{"num":1,"name":"GitHub","team":"Logical Awesome","inter":"GitHub是�
 			{"num":10,"name":"jQuery","team":"John Resig","inter":"简化HTML与JavaScript之间的操作","tear":"cn.vuejs.org"}
 ];
 window.onload = function(){
-	todo00();
+	todo();
 }
 
 
